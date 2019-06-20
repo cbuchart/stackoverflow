@@ -21,6 +21,12 @@ bool MyWidget::eventFilter(QObject* sender, QEvent* event)
 {
   if (sender == m_label) {
     qDebug() << sender->objectName() << event->type();
+    
+    if (event->type() == QEvent::Enter) {
+      qDebug() << "mouse on label name";
+    } else if (event->type() == QEvent::Leave) {
+      qDebug() << "mouse not on label name";
+    }
   }
   
   return QWidget::eventFilter(sender, event);

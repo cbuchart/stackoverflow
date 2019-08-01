@@ -53,11 +53,11 @@ void Widget::paintEvent(QPaintEvent*)
 {
   QPainter painter(this);
   
-  const QLine line1(0, height() / 2, width(), height() / 2);
-  drawWithManualDashedLine(painter, line1);
- 
-  const QLine line2(0, height() / 3, width(), height() / 3);
-  drawMultiColorDashedLine(painter, line2, 10, 20, 3, { Qt::blue, Qt::yellow }, true);
+  const QLine line1(0, height() / 3, width(), height() / 3);
+  drawMultiColorDashedLine(painter, line1, 10, 20, 3, { Qt::blue, Qt::yellow }, true);
+
+  const QLine line2(0, height() / 2, width(), height() / 2);
+  drawWithManualDashedLine(painter, line2);
 
   const QLine line3(0, 2 * height() / 3, width(), 2 * height() / 3);
   drawMultiColorDashedLine(painter, line3, 10, 20, 3, { Qt::red, Qt::black, Qt::blue, Qt::magenta }, false);
